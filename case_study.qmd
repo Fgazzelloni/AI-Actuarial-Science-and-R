@@ -1,0 +1,167 @@
+---
+title: "case_study"
+format: html
+---
+
+## Prompt
+
+provide the code in r for this example - make sure it works
+
+# Case Study: Predicting Health Insurance Fraud
+
+## Data Overview
+
+-   Synthetic dataset of insurance claims
+-   Features: age, gender, policy type, claim amount
+-   Objective: Predict likelihood of a claim
+
+## Hands-On: Risk Prediction in R
+
+```{r}
+# Load packages
+library(tidyverse)
+library(tidymodels)
+
+set.seed(123)
+
+# 1. Create a synthetic dataset
+n <- 1000
+
+insurance_data <- tibble(
+  age = sample(18:80, n, replace = TRUE),
+  gender = sample(c("Male", "Female"), n, replace = TRUE),
+  policy_type = sample(c("Basic", "Premium", "Gold"), n, replace = TRUE),
+  claim_amount = round(rnorm(n, mean = 5000, sd = 2000), 2),
+  fraud = rbinom(n, 1, 0.1) # 10% fraud cases
+)
+
+# Make sure claim_amount is positive
+insurance_data <- insurance_data %>% 
+  mutate(claim_amount = if_else(claim_amount < 0, abs(claim_amount), claim_amount))
+
+# 2. Quick EDA (optional)
+insurance_data %>% 
+  count(fraud) %>% 
+  mutate(percent = n / sum(n) * 100)
+
+# 3. Data Split
+set.seed(123)
+split <- initial_split(insurance_data, prop = 0.8, strata = fraud)
+train_data <- training(split)
+test_data <- testing(split)
+
+# 4. Preprocessing Recipe
+rec <- recipe(fraud ~ age + gender + policy_type + claim_amount, data = train_data) %>%
+  step_dummy(all_nominal_predictors()) %>%
+  step_normalize(all_numeric_predictors())
+
+# 5. Model Specification
+model <- logistic_reg() %>%
+  set_engine("glm") %>%
+  set_mode("classification")
+
+# 6. Workflow
+wf <- workflow() %>%
+  add_model(model) %>%
+  add_recipe(rec)
+
+# 7. Fit the model
+fit <- wf %>% fit(data = train_data)
+
+# 8. Predict & Evaluate
+preds <- predict(fit, test_data, type = "prob") %>%
+  bind_cols(predict(fit, test_data)) %>%
+  bind_cols(test_data)
+
+# 9. Metrics
+metrics <- preds %>%
+  metrics(truth = fraud, estimate = .pred_class)
+
+conf_mat <- preds %>%
+  conf_mat(truth = fraud, estimate = .pred_class)
+
+# 10. Print results
+print(metrics)
+print(conf_mat)
+
+# Optional: ROC Curve
+preds %>%
+  roc_curve(truth = fraud, .pred_1) %>%
+  autoplot()
+```
+
+```{r}
+# Load packages
+library(tidyverse)
+library(tidymodels)
+
+set.seed(123)
+
+# 1. Create a synthetic dataset
+n <- 1000
+
+insurance_data <- tibble(
+  age = sample(18:80, n, replace = TRUE),
+  gender = sample(c("Male", "Female"), n, replace = TRUE),
+  policy_type = sample(c("Basic", "Premium", "Gold"), n, replace = TRUE),
+  claim_amount = round(rnorm(n, mean = 5000, sd = 2000), 2),
+  fraud = rbinom(n, 1, 0.1) # 10% fraud cases
+)
+
+# Make sure claim_amount is positive
+insurance_data <- insurance_data %>% 
+  mutate(claim_amount = if_else(claim_amount < 0, 
+                                abs(claim_amount), claim_amount),
+         fraud = as_factor(fraud))
+
+# 2. Quick EDA (optional)
+insurance_data %>% 
+  count(fraud) %>% 
+  mutate(percent = n / sum(n) * 100)
+
+# 3. Data Split
+set.seed(123)
+split <- initial_split(insurance_data, prop = 0.8, strata = fraud)
+train_data <- training(split)
+test_data <- testing(split)
+
+# 4. Preprocessing Recipe
+rec <- recipe(fraud ~ age + gender + policy_type + claim_amount, data = train_data) %>%
+  step_dummy(all_nominal_predictors()) %>%
+  step_normalize(all_numeric_predictors())
+
+# 5. Model Specification
+model <- logistic_reg() %>%
+  set_engine("glm") %>%
+  set_mode("classification")
+
+# 6. Workflow
+wf <- workflow() %>%
+  add_model(model) %>%
+  add_recipe(rec)
+
+# 7. Fit the model
+fit <- wf %>% fit(data = train_data)
+
+# 8. Predict & Evaluate
+preds <- predict(fit, test_data, type = "prob") %>%
+  bind_cols(predict(fit, test_data)) %>%
+  bind_cols(test_data)
+
+# 9. Metrics
+metrics <- preds %>%
+  metrics(truth = fraud, estimate = .pred_class)
+
+conf_mat <- preds %>%
+  conf_mat(truth = fraud, estimate = .pred_class)
+
+# 10. Print results
+print(metrics)
+print(conf_mat)
+
+# Optional: ROC Curve
+preds %>%
+  roc_curve(truth = fraud, .pred_1) %>%
+  autoplot()
+```
+

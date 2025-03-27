@@ -1,0 +1,30 @@
+---
+title: "AI, Actuarial Science, and R"
+subtitle: "A New Era of Risk Modeling"
+author: "Federica Gazzelloni<br>R-Ladies Rome"
+date: "2025-03-24"
+footer: "*[AI, Actuarial Science, and R](https://github.com/Fgazzelloni/AI-Actuarial-Science-and-R)* | [federicagazzelloni.com](http://www.federicagazzelloni.com)"
+logo: "https://pbs.twimg.com/profile_images/877346259861778432/Y8MNMTF9_400x400.jpg"
+logo-alt: "rladiesglobal"
+format: 
+  revealjs: 
+    width: 1600
+    height: 900  
+    highlight-style: a11y
+    code-block-height: 650px
+    scrollable: true
+    transition: slide
+    background-transition: fade
+    incremental: true
+    slide-number: true
+    filters:
+      - fontawesome
+knitr: 
+  opts_chunk: 
+    fig.align: center
+df-print: kable
+page-layout: full
+title-block-banner: false
+---
+
+{{< include presentation.qmd >}}

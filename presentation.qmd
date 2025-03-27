@@ -1,0 +1,247 @@
+# Welcome
+
+::::: columns
+::: {.column width="30%"}
+[![Federica Gazzelloni](images/federicagazzelloni.jpg){width="80%" fig-align="center"}](https://federicagazzelloni.com/)
+
+[{{< fa link >}}](https://federicagazzelloni.com/) [{{< fa brands github >}}](https://github.com/Fgazzelloni) [{{< fa brands linkedin >}}](https://www.linkedin.com/in/federicagazzelloni/) [{{< fa brands twitter >}}](https://x.com/FGazzelloni) [{{< fa brands mastodon >}}](https://fosstodon.org/@fgazzelloni) [{{< fa brands bluesky >}}](https://bsky.app/profile/fgazzelloni.bsky.social)
+:::
+
+::: {.column width="70%"}
+-   Federica is the Lead Organizer of [R-Ladies Rome](https://rladiesrome.org/). She works as an Independent Researcher, and an advocate for open knowledge-sharing in data science.
+
+-   She collaborates with various communities included the [Actex Learning](https://www.actexlearning.com/) contributing to initiatives that promote actuarial education and inclusion in the field.
+:::
+:::::
+
+## About This Talk
+
+-   Exploring AI advancements in actuarial science
+-   How R is shaping the future of risk modeling
+-   Practical case studies and hands-on session
+
+
+# Actuarial Science in the AI Era
+
+
+##  {background-image="images/ai-image.png"}
+
+
+. . .
+
+> *AI is transforming actuarial science by enhancing data analysis, risk modeling, and decision-making processes.* [Source: EY, 2021](https://www.ey.com/en_ch/insights/ai/7-questions-for-actuaries-in-an-ai-enhanced-world)
+
+:::: {.columns}
+
+::: {.column}
+- Research
+- Teaching
+- Commercial Insurance
+:::
+
+::: {.column}
+- Mortality & morbidity predictions
+- Fraud detection in insurance
+- Claims processing automation
+- Risk analysis 
+:::
+
+::::
+
+## AI Applications in Actuarial Science{.smaller}
+
+. . . 
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+🟢 **Well-Established AI Solutions**
+
+- End-to-End Pricing: AKUR8, Earnix, Quantee
+- Rating Engines: hyperexponential, Ratabase, Duck Creek
+- Advanced Modeling: Emblem, Exakt, MasterActuary
+- Cyber Risk: Kovrr, Moody’s RMS
+- Fraud Detection: Shift Technology, FRISS
+
+🔵 **Emerging AI Tools**
+
+- Comulate → AI-driven revenue recovery for insurers
+- Coris → AI-powered risk & fraud management for SMBs
+- Novella → AI-enhanced E&S insurance underwriting
+
+🔴 **New AI Trends**
+
+- Generative AI for actuarial automation
+- DRN (Distributional Refinement Network) for predictive modeling
+
+:::
+
+::: {.column width="30%"}
+
+![AI Applications in Actuarial Science](images/ai-image-side.png){width="100%"}
+:::
+
+::::
+
+
+
+## Key Benefits of AI in Actuarial Science
+
+-   Enhances data analysis & risk modeling capabilities
+-   Automates complex risk assessments & pricing
+-   Improves predictive power & accuracy
+-   Supports regulatory compliance & transparency
+-   Improves Actuarial Decision-Making Processes
+
+
+## <span style="color:red;">Warning</span>: Challenges and Considerations in AI for Actuaries
+
+
+. . . 
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+- **Bias in decision-making processes**
+
+- **Trust & Hallucination in AI Models**
+
+- **Ethical Considerations**
+
+
+:::
+
+::: {.column width="30%"}
+
+![AI Challenges in Actuarial Science](images/ai-image-side2.png){width="100%"}
+:::
+
+::::
+
+
+
+## Bias in decision-making processes
+
+
+![Which one is the model that best represents reality?<br>](images/ai-dress.png){width="50%" fig-align="center"}
+
+## Trust & Hallucination in AI Models
+
+
+-   Trust: Ensuring model accuracy & reliability
+-   Hallucination: Overfitting & false positives
+
+. . .
+
+<center>
+![](images/ai-increase.png){width=50%}
+</center>
+
+## Ethical Considerations
+
+
+-   Fairness & transparency in AI models
+-   Bias detection & mitigation
+-   Regulatory compliance
+
+##  {background-image="images/ai-image2.png"}
+
+
+
+> "Although cost modelling and demand modelling can be framed as statistical machine learning tasks, deriving the final pricing outputs involves additional steps, such as price optimisation and strategic pricing decisions (i.e., marketing and competition considerations). These aspects extend beyond the scope of a pure machine learning algorithm." [Source: Actuaries Digital, 2025](https://www.actuaries.asn.au/)
+
+## AI Techniques in Actuarial Science
+
+-   Machine Learning (ML): Supervised, Unsupervised, Reinforcement learning
+-   Deep Learning (DL): Neural Networks, Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN)
+-   Natural Language Processing (NLP): Sentiment Analysis, Chatbots
+-   Predictive Analytics: Time Series Forecasting, Anomaly Detection
+-   Simulation Models: Monte Carlo Simulation
+-   Robotic Process Automation (RPA): Claims processing automation
+
+## AI vs. Traditional Actuarial Models
+
+. . .
+
+> “How do you see AI shaping the future of actuarial science?”
+
+. . .
+
+<center>
+![](images/ai-models.png)
+</center>
+
+# R for AI-Driven Actuarial Analysis
+
+## Why Use R?
+
+-   Beginner-friendly
+-   Open-source community support
+-   Strong ecosystem for statistical computing
+-   Integration with AI & ML frameworks
+-   Visualization & interpretability tools
+
+
+
+# Case Study: Predicting Health Insurance Fraud
+
+## Data Overview
+
+-   Synthetic dataset of insurance claims
+-   Features: age, gender, policy type, claim amount
+-   Objective: Predict likelihood of a claim
+
+
+## Hands-On: Risk Prediction in R with AI
+
+
+# Conclusion
+
+
+## Key Takeaways
+
+1.  AI is transforming actuarial science: It is increasingly common for people to use generative AI chatbots such as ChatGPT for coding help:
+
+    -   These tools can provide useful guidance by analyzing your error message.
+    -   However, the responses are generated based on statistical models and may include errors.
+    -   Always verify and understand the code suggested by AI tools before using it.
+
+2.  R provides powerful tools for predictive modeling
+
+3.  Practical applications span across insurance & risk management
+
+## Next Steps
+
+-   Explore more AI models in R
+-   Apply ML to real actuarial datasets
+-   Join R-Ladies Rome for more hands-on sessions!
+
+## Resources
+
+-   [Ethical Use of Artificial Intelligence for Actuaries-September 2019](https://www.soa.org/49bd97/globalassets/assets/files/resources/research-report/2019/ethics-ai.pdf)
+-   [Guidance Resources: Artificial Intelligence and Discrimination in Insurance Pricing and Underwriting-December 2022](https://humanrights.gov.au/sites/default/files/guidance_resource_ai_-_2022_v7-2_0.pdf)
+-   [Actuaries using data science and artificial intelligence techniques-February 2024](https://actuaries.org.uk/media/g4ymoxep/actuaries-using-data-science-and-artificial-intelligence-techniques.pdf)
+-   [Achieving Fairness in Data-Driven Decision Making-February 2025](https://www.actuaries.digital/2025/02/12/achieving-fairness-in-data-driven-decision-making/)
+-   [Joe Cheng - Summer is Coming: AI for R, Shiny, and Pharma](https://www.youtube.com/watch?v=AfMa1CVUdXU)
+
+## More Resources
+
+- https://www.perplexity.ai/
+- https://www.deepseek.com/
+- https://claude.ai/
+- https://elicit.com/
+- https://scibite.com/knowledge-hub/news/what-is-agentic-ai-and-is-there-a-role-for-ontologies/
+- https://www-infoworld-com.cdn.ampproject.org/c/s/www.infoworld.com/article/3848270/genai-tools-for-r-new-tools-to-make-r-programming-easier.html/amp/
+
+
+# Thank You!
+
+. . .
+
+Connect with us! 🔥 [R-Ladies Rome](https://rladiesrome.org)
+
+. . .
+
+Questions?
